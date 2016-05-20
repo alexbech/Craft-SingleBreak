@@ -49,11 +49,20 @@ class SingleBreakTwigExtension extends \Twig_Extension
     /**
      * @return string
      */
-    public function singlebreak($value)
+    public function singlebreak($string)
     {
-      $string = str_replace("<p><br /></p>", "", $value);
-      $string = preg_replace("/<p>(<br ?\/>)*/", "<p>", $string);
-      $string = preg_replace("/(<br ?\/>)*<\/p>/", "</p>", $string);
+      // Remove duplicates
+      $string = preg_replace("#(<br\s*/?>\s*)+#","<br />", $string);
+
+      // Remove orphan
+      $string = str_replace("<p><br /></p>", "", $string);
+
+      // Remove leading
+      $string = preg_replace("#<p>(<br\s*/?>\s*)+#", "<p>", $string);
+
+      // Remove trailing
+      $string = preg_replace("#(<br\s*/?>\s*)+</p>#", "</p>", $string);
+      
       return TemplateHelper::getRaw($string);
     }
 }
