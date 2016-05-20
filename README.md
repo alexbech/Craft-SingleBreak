@@ -17,6 +17,22 @@ SingleBreak works on Craft 2.5.x.
 {{ someRichText | singlebreak }}
 ```
 
+## Example
+
+The following rich text field output:
+
+```html
+<p><br /></p>
+<p><br />Lorem ipsum...<br /></p>
+<p><br /></p>
+```
+
+turns into this:
+
+```html
+<p>Lorem ipsum...</p>
+```
+
 ## Changelog
 
 ### 1.0.0 -- 2016.05.19

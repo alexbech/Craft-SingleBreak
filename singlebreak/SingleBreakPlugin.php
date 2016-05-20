@@ -35,7 +35,7 @@ class SingleBreakPlugin extends BasePlugin
      */
     public function getDescription()
     {
-        return Craft::t('SingleBreak is a twig filter that removes leading, trailing and orphaned linebreaks in your paragraphs.');
+        return Craft::t('Twig filter that removes leading, trailing and orphaned linebreaks in your paragraphs.');
     }
 
     /**
