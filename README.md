@@ -1,6 +1,6 @@
 # SingleBreak plugin for Craft CMS
 
-SingleBreak is a twig filter that removes leading, trailing and orphaned linebreaks in your paragraphs.
+SingleBreak is a twig filter that removes leading, trailing, duplicate and orphaned linebreaks in your paragraphs.
 
 ## Installation
 
@@ -23,14 +23,14 @@ The following rich text field output:
 
 ```html
 <p><br /></p>
-<p><br />Lorem ipsum...<br /></p>
+<p><br />Lorem<br /><br/>ipsum<br /></p>
 <p><br /></p>
 ```
 
 turns into this:
 
 ```html
-<p>Lorem ipsum...</p>
+<p>Lorem<br />ipsum</p>
 ```
 
 ## Changelog
